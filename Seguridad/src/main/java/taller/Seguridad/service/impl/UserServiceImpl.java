@@ -39,6 +39,12 @@ public class UserServiceImpl implements UserService {
         return repository.findByUsername(username)
                 .map(this::mapToResponse);
     }
+      @Override
+    public boolean login(String username, String password) {
+        Optional<User> user = repository.findByUsername(username);
+        return user.isPresent() && user.get().getPassword().equals(password);
+    }
+
 
     private UserResponse mapToResponse(User user) {
         UserResponse response = new UserResponse();

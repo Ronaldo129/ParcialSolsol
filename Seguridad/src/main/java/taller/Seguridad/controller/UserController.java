@@ -7,6 +7,7 @@ import java.util.Optional;
 import taller.Seguridad.dto.UserRequest;
 import taller.Seguridad.dto.UserResponse;
 import taller.Seguridad.service.UserService;
+ import java.util.Map;   
 
 @RestController
 @RequestMapping("/api/users")
@@ -28,5 +29,14 @@ public class UserController {
     @GetMapping("/{username}")
     public Optional<UserResponse> findByUsername(@PathVariable String username) {
         return service.findByUsername(username);
+    }
+     @PostMapping("/login")
+    public String login(@RequestBody Map<String, String> credentials) {
+        String username = credentials.get("username");
+        String password = credentials.get("password");
+
+        boolean success = service.login(username, password);
+
+        return success ? "✅ Login exitoso" : "❌ Usuario o contraseña incorrectos";
     }
 }

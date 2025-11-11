@@ -1,0 +1,17 @@
+
+SEGURIDAD-------------------------
+http://localhost:8085/api/users GET
+http://localhost:8085/api/users POST
+{
+  "username": "admin",
+  "password": "1234",
+  "role": "ADMIN"
+}
+http://localhost:8085/api/users/login POST
+{
+  "username": "admin",
+  "password": "1234"
+}
+ARTICULO-----------------------------
+ 
+

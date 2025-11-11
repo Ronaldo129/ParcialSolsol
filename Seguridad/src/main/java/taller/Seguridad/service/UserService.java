@@ -9,4 +9,5 @@ public interface UserService {
     List<UserResponse> findAll();
     UserResponse save(UserRequest request);
     Optional<UserResponse> findByUsername(String username);
+    boolean login(String username, String password);
 }
