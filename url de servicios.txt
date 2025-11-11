@@ -13,5 +13,11 @@ http://localhost:8085/api/users/login POST
   "password": "1234"
 }
 ARTICULO-----------------------------
- 
-
+ http://localhost:8086/api/articulos GET
+ http://localhost:8086/api/articulos POST
+ {
+  "nombre": "Laptop Lenovo ThinkPad",
+  "precio": 4500.50
+}
+ http://localhost:8086/api/articulos/1 PUT
+ http://localhost:8086/api/articulos/1 DELETE
