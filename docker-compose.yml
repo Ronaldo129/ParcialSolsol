@@ -3,6 +3,8 @@ services:
   mongo:
     image: mongo:6
     container_name: ms_mongo
+    environment:
+      MONGO_INITDB_DATABASE: bd_seguridad
     ports:
       - "27019:27017"
     volumes:
